@@ -134,7 +134,7 @@ section.resume-section .resume-item .resume-date {
     min-width: 0;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
     section.resume-section {
         min-height: 100vh;
     }
@@ -166,7 +166,7 @@ a {
 a:active,
 a:focus,
 a:hover {
-    color: #824027;
+    color: #005B96;
 }
 
 /* Smooth underline animation for nav links */
@@ -383,7 +383,7 @@ body.page-loaded {
   100% { transform: translateY(100%); }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .background-lines { display: none; }
 }
 
@@ -396,4 +396,72 @@ body.page-loaded {
 #interests,
 #certifications {
   position: relative;
+}
+
+.btn-primary {
+  background-color: #005B96;
+  border-color: #005B96;
+  border-radius: 30px;
+  padding: 10px 20px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #004080;
+  border-color: #004080;
+  transform: scale(1.05);
+}
+
+/* Special CV button */
+.navbar-nav .cv-btn {
+    margin-top: 70px;
+    text-transform: uppercase;
+    background-color: #005B96;
+    color: white !important;
+    border-radius: 25px;
+    padding: 8px 18px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: block;
+}
+
+/* Hover effect = button-like */
+.navbar-nav .cv-btn:hover {
+    background-color: #dedee627;
+    transform: scale(1.05);
+    text-decoration: none;
+}
+
+.about-btn {
+  display: inline-block;
+  font-family: "Rubik", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  letter-spacing: 0px;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  border-radius: 5px;
+  line-height: 46px;
+  outline: none !important;
+  padding: 0 42px;
+  border: 2px solid #005B96;
+  color: #005B96;
+  background: #ffffff00;
+  transition: all 0.3s ease;
+}
+
+.about-btn:hover {
+  background-image: linear-gradient(to right, #005B96 0%, #0077CC 100%);
+  color: #ffffff;
+  border: 2px solid transparent;
+  transform: scale(1.05);
+  box-shadow: 0px 10px 30px rgba(118, 85, 225, 0.3);
+  text-decoration: none;
+}
+
+
+.fa-li{
+  color: rgb(82, 82, 82);
 }
