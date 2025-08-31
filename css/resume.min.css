@@ -45,11 +45,17 @@ h2 {
     color: #495057;
 }
 
-.list-social-icons a:hover {
+.list-social-icons a:hover .fa-circle {
     color: #005B96;
+    transition: color 0.3s ease;
 }
 
-.list-social-icons a .fa-lg {
+.list-social-icons a:hover .fa-stack {
+  transform: scale(1.1);
+  transition: transform 0.3s ease;
+}
+
+.list-social-icons a .fa-stack {
     font-size: 1.75rem;
 }
 
@@ -57,7 +63,13 @@ h2 {
     font-size: 3rem;
 }
 
+.list-icons .list-inline-item i {
+    display: inline-block;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
 .list-icons .list-inline-item i:hover {
+    transform: scale(1.2);
     color: #005B96;
 }
 
@@ -119,7 +131,7 @@ section.resume-section {
 }
 
 section.resume-section .resume-item .resume-date {
-    min-width: none;
+    min-width: 0;
 }
 
 @media (min-width: 768px) {
@@ -155,4 +167,233 @@ a:active,
 a:focus,
 a:hover {
     color: #824027;
+}
+
+/* Smooth underline animation for nav links */
+.nav-link {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  left: 0;
+  bottom: 0;
+  background: #dedee6; /* matches your theme */
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+.img-profile {
+  transition: transform 0.4s ease;
+}
+.img-profile:hover {
+  transform: scale(1.05);
+}
+
+.resume-item {
+    position: relative;
+    z-index: 5;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 1rem;
+}
+.resume-item:hover {
+    z-index: 10;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 14px rgba(0,0,0,0.16);
+    background-color: #f8f8f8;
+}
+
+/* Page load fade */
+body {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+body.page-loaded {
+  opacity: 1;
+}
+
+/* Scroll fade */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Subtle floating background shapes about section*/
+.background-shapes-about {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; /* shapes won't block clicks */
+  overflow: hidden;
+  z-index: 0;
+}
+
+.background-shapes-about span {
+  position: absolute;
+  display: block;
+  width: 80px;   /* bigger shapes */
+  height: 80px;
+  background: rgba(0, 64, 128, 0.08); /* subtle blue, low opacity */
+  border-radius: 50%;
+  animation: float 12s infinite ease-in-out;
+}
+
+.background-shapes-about span:nth-child(1) {
+    width: 60px;
+    height: 60px;
+  top: 78%;
+  left: 23%;
+  animation-delay: 0s;
+}
+.background-shapes-about span:nth-child(2) {
+  top: 71%;
+  left: 82%;
+  animation-delay: 3s;
+}
+.background-shapes-about span:nth-child(3) {
+    width: 100px;
+    height: 100px;
+  top: 10%;
+  left: 60%;
+  animation-delay: 6s;
+}
+
+/* Subtle floating background shapes skills section*/
+.background-shapes-skills {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.background-shapes-skills i {
+  position: absolute;
+  font-size: 5rem; /* adjust size */
+  color: rgba(0, 64, 128, 0.08); /* subtle opacity */
+  animation: float 12s infinite ease-in-out;
+}
+
+.background-shapes-skills i:nth-child(1) { top: 18%; left: 55%; animation-delay: 0s; } /* code */
+.background-shapes-skills i:nth-child(2) { top: 70%; left: 70%; animation-delay: 0s; } /* code */
+
+/* Subtle floating background shapes interests section*/
+.background-shapes-interests {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.background-shapes-interests i {
+  position: absolute;
+  font-size: 3rem; /* adjust size */
+  color: rgba(0, 64, 128, 0.08); /* subtle opacity */
+  animation: float 12s infinite ease-in-out;
+}
+
+.background-shapes-interests i:nth-child(1) { top: 18%; left: 45%; animation-delay: 0s; font-size: 7rem;} /* book */
+.background-shapes-interests i:nth-child(2) { top: 75%; left: 15%; animation-delay: 3s; font-size: 4rem;} /* laptop */
+.background-shapes-interests i:nth-child(3) { top: 80%; left: 65%; animation-delay: 6s; font-size: 5rem;} /* chip */
+
+
+/* Subtle floating background icons for certifications section */
+.background-shapes-certifications {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 0;
+}
+
+.background-shapes-certifications i {
+  position: absolute;
+  font-size: 3rem; /* adjust size */
+  color: rgba(0, 64, 128, 0.08); /* subtle opacity */
+  animation: float 12s infinite ease-in-out;
+}
+
+.background-shapes-certifications i:nth-child(1) { top: 20%; left: 60%; animation-delay: 0s; font-size: 8rem; } /* subtle opacity */
+
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-25px) scale(1.1);
+  }
+}
+
+/* Lines for background */
+.background-lines {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* Example for the lines */
+.background-lines span {
+  position: absolute;
+  display: block;
+  width: 2px;            /* thin lines */
+  height: 100%;
+  background: rgba(0, 91, 150, 0.1); /* subtle color */
+  animation: moveLine 10s linear infinite;
+}
+
+/* staggered positions */
+.background-lines span:nth-child(1) { left: 19%; animation-delay: 6s; }
+.background-lines span:nth-child(2) { left: 51%; animation-delay: 3s; }
+.background-lines span:nth-child(3) { left: 80%; animation-delay: 0s; }
+
+/* animation */
+@keyframes moveLine {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+@media (max-width: 768px) {
+  .background-lines { display: none; }
+}
+
+
+#about,
+#experience,
+#projects,
+#education,
+#skills,
+#interests,
+#certifications {
+  position: relative;
 }
