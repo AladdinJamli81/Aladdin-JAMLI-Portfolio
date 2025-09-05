@@ -645,3 +645,23 @@ body.dark-theme .background-shapes-certifications i {
 @media (max-width: 992px) {
   .background-lines { display: none; }
 }
+
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  h3 .resume-link {
+    color: #ffffff;
+  }
+  h3 .resume-link:hover {
+    color: #bbbbbb;
+  }
+}
+
+
+h3 .resume-link {
+  color: #005B96; /* light mode */
+}
+
+h3 .resume-link:hover {
+  color: #003d66;
+}
